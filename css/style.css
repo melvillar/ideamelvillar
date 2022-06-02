@@ -111,7 +111,7 @@ footer{
     flex-direction: row;
     margin-bottom: 0.625rem;
 }
-.icons{
+footer img{
     width: 3.125rem;
 }
 /* Descripciones de cada sección*/
@@ -239,5 +239,8 @@ form button:hover{
     }
     form{
         margin: 2rem;
+    }
+    .carrousel img{
+        width: 100% ! important ;
     }
 }

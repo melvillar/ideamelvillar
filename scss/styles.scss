@@ -116,7 +116,7 @@ header {
 }
 .list-group {
 	a {
-		background-image: linear-gradient(to left, $violeta-oscuro1 0%, $violeta-oscuro1 0.01%, $violeta 100%);
+		background-image: $dark;
         h5 {
             background-image: linear-gradient(to right, $rosa 0%, $lila 100%);
             color: $violeta-oscuro1;

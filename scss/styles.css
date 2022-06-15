@@ -1,0 +1,367 @@
+body {
+  font-family: 'Rubik', sans-serif;
+  background-image: -webkit-gradient(linear, right top, left top, from(#9268CA), to(#FFD7F4));
+  background-image: linear-gradient(to left, #9268CA 0%, #FFD7F4 100%);
+  background-size: cover;
+}
+
+.darkbody {
+  background-image: -webkit-gradient(linear, right top, left top, from(#0E172C), color-stop(0.01%, #0E172C), to(#5E41DC));
+  background-image: linear-gradient(to left, #0E172C 0%, #0E172C 0.01%, #5E41DC 100%);
+}
+
+.mediumbody {
+  background-image: -webkit-gradient(linear, right top, left top, from(#5E41DC), to(#9268CA));
+  background-image: linear-gradient(to left, #5E41DC 0%, #9268CA 100%);
+}
+
+header ul {
+  background-color: #C69BED;
+  font-family: 'Rubik', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 1rem;
+  width: 100%;
+}
+
+header li {
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0.7rem;
+  padding: 0.7rem;
+  background-color: #FFFFFF;
+  border-radius: 30px;
+  height: 3.200rem;
+  width: 11.600rem;
+  left: 4.875rem;
+  top: 2.375rem;
+}
+
+header li:hover {
+  background-color: #0E172C;
+}
+
+header li a {
+  color: #0E172C;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-decoration: none;
+  line-height: 0.75rem;
+}
+
+header li a:hover {
+  color: #FFFFFF;
+}
+
+.presentation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: flex-center;
+      -ms-flex-pack: flex-center;
+          justify-content: flex-center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -ms-flex-line-pack: stretch;
+      align-content: stretch;
+}
+
+.presentation .fotoperfil {
+  height: 21.438rem;
+  width: 21.813rem;
+  left: 4.875rem;
+  top: 15.25rem;
+  border-radius: 40px;
+  margin: 2rem;
+}
+
+.presentation .fotoperfil:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.presentation .inicio {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  padding-top: 4.5rem;
+}
+
+.presentation h1 {
+  font-family: 'Rubik', sans-serif;
+  color: #0E172C;
+  margin: 2rem;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 3.563rem;
+  text-align: left;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-name: aparecer;
+          animation-name: aparecer;
+  -webkit-animation-iteration-count: initial;
+          animation-iteration-count: initial;
+}
+
+.presentation .biografia {
+  font-family: 'Rubik', sans-serif;
+  margin: 2rem;
+  color: #000000;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.carrousel {
+  margin: 2rem;
+}
+
+.list-group a {
+  background-image: -webkit-gradient(linear, right top, left top, from(#0E172C), color-stop(0.01%, #0E172C), to(#5E41DC));
+  background-image: linear-gradient(to left, #0E172C 0%, #0E172C 0.01%, #5E41DC 100%);
+}
+
+.list-group a h5 {
+  background-image: -webkit-gradient(linear, left top, right top, from(#FFD7F4), to(#C69BED));
+  background-image: linear-gradient(to right, #FFD7F4 0%, #C69BED 100%);
+  color: #0E172C;
+  font-weight: 600;
+  line-height: 2rem;
+  text-align: left;
+  padding: 0.75rem;
+  border-radius: 10px;
+}
+
+.list-group a .mb-1 {
+  color: #C69BED;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.list-group a:hover {
+  background-image: -webkit-gradient(linear, right top, left top, from(#5E41DC), to(#9268CA));
+  background-image: linear-gradient(to left, #5E41DC 0%, #9268CA 100%);
+}
+
+.list-group p {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #F6E9FF;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-bottom: 0.625rem;
+}
+
+footer img {
+  width: 3.125rem;
+}
+
+footer img:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.tInicio {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  text-align: center;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-name: aparecer;
+          animation-name: aparecer;
+  -webkit-animation-iteration-count: initial;
+          animation-iteration-count: initial;
+  color: #000000;
+}
+
+.tIniciodark {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  text-align: center;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-name: aparecer;
+          animation-name: aparecer;
+  -webkit-animation-iteration-count: initial;
+          animation-iteration-count: initial;
+  color: #FFFFFF;
+}
+
+.pIniciodark {
+  padding: 4rem;
+  color: #F6E9FF;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 2rem;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.pInicio {
+  padding: 4rem;
+  color: #000000;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 2rem;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.row {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  text-align: center;
+  -webkit-text-size-adjust: 100%;
+  padding: 1rem;
+  margin: 1rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.row a {
+  background-color: #0E172C;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.row a:hover {
+  background-color: #FFFFFF;
+  color: #0E172C;
+  font-weight: bolder;
+}
+
+.row img:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+h2 {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  text-align: center;
+  margin: 2rem;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 3.563rem;
+}
+
+.darkmode {
+  color: #F6E9FF;
+}
+
+form {
+  font-family: 'Rubik', sans-serif;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  margin: 6rem;
+  color: #FFFFFF;
+  font-size: 1.75rem;
+  font-weight: 550;
+}
+
+form button {
+  background-color: #0E172C;
+  font-family: 'Rubik', sans-serif;
+  border-radius: 30px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #FFFFFF;
+  border: none;
+  padding: 1rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+form button:hover {
+  background-color: #FFFFFF;
+  color: #0E172C;
+  font-weight: bolder;
+}
+
+form input {
+  text-align: center;
+  margin: 0.7rem;
+  padding: 0.7rem;
+  border-radius: 30px;
+  -webkit-transition: all 2s;
+  transition: all 2s;
+  width: 75%;
+}
+
+form input:focus {
+  width: 100%;
+  font-size: 24px;
+}
+/*# sourceMappingURL=styles.css.map */

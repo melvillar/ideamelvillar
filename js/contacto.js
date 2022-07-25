@@ -12,7 +12,7 @@ let precioServicioC = 20000
 let cotizacionAprox = 0;
 let descuento = 0; 
 
-function descuentoJulio (precio, descuento){
+function descuentoJulio (cotizacionAprox, descuento){
     const calculoDescuento = cotizacionAprox - (cotizacionAprox * descuento)
     alert ("Tenés un descuento de $" + calculoDescuento + "\nVálido por todo el mes de julio");
 }

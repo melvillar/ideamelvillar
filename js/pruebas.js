@@ -13,10 +13,8 @@ let cotizacionAprox = 0;
 let descuento = 0; 
 
 function descuentoJulio (cotizacionAprox, descuento){
-    const calculoDescuento = cotizacionAprox - (cotizacionAprox * descuento)
+    return cotizacionAprox - (cotizacionAprox * descuento)
 };
-
-let resultadoDescuento = descuentoJulio (cotizacionAprox, descuento);
 
 class Servicios {
     constructor (nombre, precio){
@@ -34,22 +32,24 @@ let serviciosGenerales = [servicioA, servicioB, servicioC];
 const listaNombres = serviciosGenerales.map(servicio => servicio.nombre);
 const nombresServicios = (listaNombres);
 
-let cotizacion1 = prompt ("¿Cuáles son servicios que estás interesado en cotizar?\nActualmente tengo calendario abierto para:" + nombresServicios);
+let cotizacion1 = prompt ("¿Cuáles son servicios que estás interesado en cotizar?\nActualmente tengo calendario abierto para: " + nombresServicios);
+
+let calculoDescuento;
 
 switch (cotizacion1){
     case "Redaccion":
-        cotizacionAprox += (servicioA.precio) ;
-        descuentoJulio (cotizacionAprox, 0.15)
+        cotizacionAprox += servicioA.precio
+        calculoDescuento = descuentoJulio(cotizacionAprox, 0.15)
         alert ("Por descuento, el servicio te queda a solo $" + calculoDescuento + "(\nVálido por todo el mes de julio)");
         break;
     case "Marketing":
-        cotizacionAprox += (servicioB.precio);
-        descuentoJulio (cotizacionAprox, 0.1)
+        cotizacionAprox += servicioB.precio
+        calculoDescuento = descuentoJulio(cotizacionAprox, 0.1)
         alert ("Por descuento, el servicio te queda a solo $" + calculoDescuento + "(\nVálido por todo el mes de julio)");
         break;
     case "Asesoria":
-        cotizacionAprox += (servicioC.precio);
-        descuentoJulio (cotizacionAprox, 0.2)
+        cotizacionAprox += servicioC.precio
+        calculoDescuento = descuentoJulio(cotizacionAprox, 0.2)
         alert ("Por descuento, el servicio te queda a solo $" + calculoDescuento + "(\nVálido por todo el mes de julio)");
         break;
     default:

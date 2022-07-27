@@ -1,5 +1,6 @@
 //Cotización de servicios ofrecidos por Melanie Villar//
 
+//Declaración de servicios//
 let nombreServicioA = "Redaccion";
 let precioServicioA = 15000;
 
@@ -12,10 +13,12 @@ let precioServicioC = 20000;
 let cotizacionAprox = 0;
 let descuento = 0; 
 
+//Implementación de un descuento de porcentaje variable dependiendo del servicio a cotizar//
 function descuentoJulio (cotizacionAprox, descuento){
     return cotizacionAprox - (cotizacionAprox * descuento)
 };
 
+//Objeto y Array de Servicios//
 class Servicios {
     constructor (nombre, precio){
         this.nombre = nombre;
@@ -32,6 +35,8 @@ let serviciosGenerales = [servicioA, servicioB, servicioC];
 const listaNombres = serviciosGenerales.map(servicio => servicio.nombre);
 const nombresServicios = (listaNombres);
 
+
+//Simulación de cotización//
 let cotizacion1 = prompt ("¿Cuáles son servicios que estás interesado en cotizar?\nActualmente tengo calendario abierto para: " + nombresServicios);
 
 let calculoDescuento;
@@ -60,3 +65,7 @@ switch (cotizacion1){
 alert ("El presupuesto total aproximado por los servicios consultados es de $" + cotizacionAprox);
 
 prompt ("Gracias por contactarte conmigo, dejame un mail y me voy a estar comunicando a la brevedad");
+
+
+/*La idea es en el siguiente mes solo tener descuento para los servicios que superen cierto monto, o aplicar alguna promoción esepecial al contratarlos
+let descuentoCondicional = serviciosGenerales.filter((servicio) => servicio.precio >= 15000)*/

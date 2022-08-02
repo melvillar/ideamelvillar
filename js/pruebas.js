@@ -14,7 +14,7 @@ let cotizacionAprox = 0;
 let descuento = 0; 
 
 //Implementación de un descuento de porcentaje variable dependiendo del servicio a cotizar//
-function descuentoJulio (cotizacionAprox, descuento){
+function descuentoAgosto (cotizacionAprox, descuento){
     return cotizacionAprox - (cotizacionAprox * descuento)
 };
 
@@ -35,26 +35,51 @@ let serviciosGenerales = [servicioA, servicioB, servicioC];
 const listaNombres = serviciosGenerales.map(servicio => servicio.nombre);
 const nombresServicios = (listaNombres);
 
+let calculoDescuento = 0;
 
-//Simulación de cotización//
-let cotizacion1 = prompt ("¿Cuáles son servicios que estás interesado en cotizar?\nActualmente tengo calendario abierto para: " + nombresServicios);
+let cotizacion = document.getElementById("servicios");
 
-let calculoDescuento;
+function render(lista){
+    for(const servicio of lista){
+            let presupuesto = document.createElement("div")
 
-switch (cotizacion1){
+            presupuesto.innerHTML= `<h3>${servicio.nombre}</h3>
+                            <p>Precio con descuento de Agosto: $ ${serivicio.precio}</p>`
+            formulario.append(presupuesto)
+    }
+}
+
+render(listaProductos)
+
+let filtroA = document.getElementById("botonFiltro")
+let filtroB = document.getElementById("botonFiltro2")
+
+filtroA.addEventListener("click", function(){filtrarCategoria("a")})
+filtroB.addEventListener("click", function(){filtrarCategoria("b")})
+
+function filtrarCategoria(categoria){
+    let lista = listaProductos.filter((producto) => producto.categoria == categoria)
+    catalogo.innerHTML = ""
+    render(lista)
+}
+
+
+cotizacion.addEventListener("servicios", serviciosHandler)
+
+switch (cotizacion){
     case "Redaccion":
         cotizacionAprox += servicioA.precio
-        calculoDescuento = descuentoJulio(cotizacionAprox, 0.15)
+        calculoDescuento = descuentoAgosto(cotizacionAprox, 0.15)
         alert ("Por descuento, el servicio te queda a solo $" + calculoDescuento + "(\nVálido por todo el mes de julio)");
         break;
     case "Marketing":
         cotizacionAprox += servicioB.precio
-        calculoDescuento = descuentoJulio(cotizacionAprox, 0.1)
+        calculoDescuento = descuentoAgosto(cotizacionAprox, 0.1)
         alert ("Por descuento, el servicio te queda a solo $" + calculoDescuento + "(\nVálido por todo el mes de julio)");
         break;
     case "Asesoria":
         cotizacionAprox += servicioC.precio
-        calculoDescuento = descuentoJulio(cotizacionAprox, 0.2)
+        calculoDescuento = descuentoAgosto(cotizacionAprox, 0.2)
         alert ("Por descuento, el servicio te queda a solo $" + calculoDescuento + "(\nVálido por todo el mes de julio)");
         break;
     default:

@@ -49,49 +49,55 @@ function render(lista){
     }
 }
 
-render(listaProductos)
+render(serviciosGenerales)
 
-let filtroA = document.getElementById("botonFiltro")
-let filtroB = document.getElementById("botonFiltro2")
+let botonservicioA = document.getElementById("servicioA")
+let botonservicioB = document.getElementById("servicioB")
+let botonservicioC = document.getElementById("servicioC")
 
-filtroA.addEventListener("click", function(){filtrarCategoria("a")})
-filtroB.addEventListener("click", function(){filtrarCategoria("b")})
+botonservicioA.addEventListener("click", function(){filtrarServicios("Redaccion")})
+botonservicioB.addEventListener("click", function(){filtrarServicios("Marketing")})
+botonservicioC.addEventListener("click", function(){filtrarServicios("Asesoria")})
 
-function filtrarCategoria(categoria){
-    let lista = listaProductos.filter((producto) => producto.categoria == categoria)
-    catalogo.innerHTML = ""
+function filtrarServicios(nombre){
+    let lista = listaProductos.filter((servicio) =servicio.nombre == nombre)
+    cotizacion.innerHTML = ""
     render(lista)
 }
 
-
 cotizacion.addEventListener("servicios", serviciosHandler)
 
-switch (cotizacion){
-    case "Redaccion":
-        cotizacionAprox += servicioA.precio
-        calculoDescuento = descuentoAgosto(cotizacionAprox, 0.15)
-        alert ("Por descuento, el servicio te queda a solo $" + calculoDescuento + "(\nVálido por todo el mes de julio)");
-        break;
-    case "Marketing":
-        cotizacionAprox += servicioB.precio
-        calculoDescuento = descuentoAgosto(cotizacionAprox, 0.1)
-        alert ("Por descuento, el servicio te queda a solo $" + calculoDescuento + "(\nVálido por todo el mes de julio)");
-        break;
-    case "Asesoria":
-        cotizacionAprox += servicioC.precio
-        calculoDescuento = descuentoAgosto(cotizacionAprox, 0.2)
-        alert ("Por descuento, el servicio te queda a solo $" + calculoDescuento + "(\nVálido por todo el mes de julio)");
-        break;
-    default:
-        prompt ("Dejame tu consulta específica y un mail, te voy a estar respondiendo a la brevedad");
-        break;
-};
+function inputHandler(e){
+    presupuesto = e.target.value
+    cotizacion()
+}
 
-alert ("El presupuesto total aproximado por los servicios consultados es de $" + cotizacionAprox);
+let input = document.getElementById("inputNumber3")
 
-prompt ("Gracias por contactarte conmigo, dejame un mail y me voy a estar comunicando a la brevedad");
+input.addEventListener("input", inputHandler)
 
-
-/*La idea es en el siguiente mes solo tener descuento para los servicios que superen cierto monto, o aplicar alguna promoción esepecial al contratarlos
-
-let descuentoCondicional = serviciosGenerales.filter((servicio) => servicio.precio >= 15000)*/
+function cotizacion() {
+    switch (cotizacion){
+        case "Redaccion":
+            cotizacionAprox += servicioA.precio
+            calculoDescuento = descuentoAgosto(cotizacionAprox, 0.15)
+            let mensaje1 = document.createElement("h4")
+            mensaje.innerText = "Por descuento, el servicio te queda a solo $" + calculoDescuento;
+        case "Marketing":
+            cotizacionAprox += servicioB.precio
+            calculoDescuento = descuentoAgosto(cotizacionAprox, 0.1)
+            let mensaje2 = document.createElement("h4")
+            mensaje.innerText = "Por descuento, el servicio te queda a solo $" + calculoDescuento;
+            break;
+        case "Asesoria":
+            cotizacionAprox += servicioC.precio
+            calculoDescuento = descuentoAgosto(cotizacionAprox, 0.2)
+            let mensaje3 = document.createElement("h4")
+            mensaje.innerText = "Por descuento, el servicio te queda a solo $" + calculoDescuento;
+            break;
+        default:
+            let mensaje4 = document.createElement("h4")
+            mensaje.innerText = "Dejame tu consulta específica y te voy a estar respondiendo a la brevedad";
+            break;
+    }
+}

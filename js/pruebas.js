@@ -1,5 +1,16 @@
 //Cotización de servicios ofrecidos por Melanie Villar//
 
+//Modal de agradecimiento final//
+
+const modal = document.getElementById("modal");
+
+modal.setAttribute("style", "display:none !important");
+
+enviar.addEventListener("click", function (e) {
+e.preventDefault();
+modal.setAttribute("style", "display: inline !important");
+});
+
 //Declaración de servicios//
 let nombreServicioA = "Redaccion";
 let precioServicioA = 15000;
@@ -30,6 +41,11 @@ const servicioA = new Servicios (nombreServicioA, precioServicioA);
 const servicioB = new Servicios (nombreServicioB, precioServicioB);
 const servicioC = new Servicios (nombreServicioC, precioServicioC);
 
+const json = JSON.stringify(servicioA);
+localStorage.setItem("usuario", json);
+
+console.log(JSON.parse(localStorage.getItem("usuario")));
+
 let serviciosGenerales = [servicioA, servicioB, servicioC];
 
 const listaNombres = serviciosGenerales.map(servicio => servicio.nombre);
@@ -39,65 +55,61 @@ let calculoDescuento = 0;
 
 let cotizacion = document.getElementById("servicios");
 
-function render(lista){
-    for(const servicio of lista){
-            let presupuesto = document.createElement("div")
+let botonservicioA = document.getElementById("servicioA");
+let botonservicioB = document.getElementById("servicioB");
+let botonservicioC = document.getElementById("servicioC");
 
-            presupuesto.innerHTML= `<h3>${servicio.nombre}</h3>
-                            <p>Precio con descuento de Agosto: $ ${serivicio.precio}</p>`
-            formulario.append(presupuesto)
-    }
+botonservicioA.addEventListener("click", function () {
+    filtrarServicios("Redaccion");
+});
+
+botonservicioB.addEventListener("click", function () {
+    filtrarServicios("Marketing");
+});
+
+botonservicioC.addEventListener("click", function () {
+    filtrarServicios("Asesoria");
+});
+
+function filtrarServicios(nombre) {
+    let lista = serviciosGenerales.filter(
+        (servicio) => servicio.nombre == nombre
+    );
+    selectServicios.innerHTML = "";
+    render(lista);
 }
 
-render(serviciosGenerales)
+selectServicios.addEventListener("change", inputHandler);
 
-let botonservicioA = document.getElementById("servicioA")
-let botonservicioB = document.getElementById("servicioB")
-let botonservicioC = document.getElementById("servicioC")
-
-botonservicioA.addEventListener("click", function(){filtrarServicios("Redaccion")})
-botonservicioB.addEventListener("click", function(){filtrarServicios("Marketing")})
-botonservicioC.addEventListener("click", function(){filtrarServicios("Asesoria")})
-
-function filtrarServicios(nombre){
-    let lista = listaProductos.filter((servicio) =servicio.nombre == nombre)
-    cotizacion.innerHTML = ""
-    render(lista)
+function inputHandler(e) {
+    cotizar(e.target.value);
 }
 
-cotizacion.addEventListener("servicios", serviciosHandler)
+let input = document.getElementById("inputNumber3");
 
-function inputHandler(e){
-    presupuesto = e.target.value
-    cotizacion()
-}
+input.addEventListener("input", inputHandler);
 
-let input = document.getElementById("inputNumber3")
-
-input.addEventListener("input", inputHandler)
-
-function cotizacion() {
-    switch (cotizacion){
+function cotizar(nombreServicio) {
+    let valor;
+    switch (nombreServicio) {
         case "Redaccion":
-            cotizacionAprox += servicioA.precio
-            calculoDescuento = descuentoAgosto(cotizacionAprox, 0.15)
-            let mensaje1 = document.createElement("h4")
-            mensaje.innerText = "Por descuento, el servicio te queda a solo $" + calculoDescuento;
+        valor = descuentoAgosto(servicioA.precio, 0.15);
+        serviciosSeleccionados.innerText =
+            "Por descuento, el servicio te queda a solo $" + valor;
+        break;
         case "Marketing":
-            cotizacionAprox += servicioB.precio
-            calculoDescuento = descuentoAgosto(cotizacionAprox, 0.1)
-            let mensaje2 = document.createElement("h4")
-            mensaje.innerText = "Por descuento, el servicio te queda a solo $" + calculoDescuento;
-            break;
+        valor = descuentoAgosto(servicioB.precio, 0.1);
+        serviciosSeleccionados.innerText =
+            "Por descuento, el servicio te queda a solo $" + valor;
+        break;
         case "Asesoria":
-            cotizacionAprox += servicioC.precio
-            calculoDescuento = descuentoAgosto(cotizacionAprox, 0.2)
-            let mensaje3 = document.createElement("h4")
-            mensaje.innerText = "Por descuento, el servicio te queda a solo $" + calculoDescuento;
-            break;
+        valor = descuentoAgosto(servicioC.precio, 0.2);
+        serviciosSeleccionados.innerText =
+            "Por descuento, el servicio te queda a solo $" + valor;
+        break;
         default:
-            let mensaje4 = document.createElement("h4")
-            mensaje.innerText = "Dejame tu consulta específica y te voy a estar respondiendo a la brevedad";
-            break;
+        serviciosSeleccionados.innerText =
+            "Dejame tu consulta específica y te voy a estar respondiendo a la brevedad";
+        break;
     }
 }

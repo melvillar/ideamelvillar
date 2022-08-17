@@ -1,15 +1,13 @@
 //Cotización de servicios ofrecidos por Melanie Villar//
-
-//Modal de agradecimiento final//
-
-const modal = document.getElementById("modal");
-
-modal.setAttribute("style", "display:none !important");
-
+const enviar = document.querySelector("#enviar")
 enviar.addEventListener("click", function (e) {
 e.preventDefault();
-modal.setAttribute("style", "display: inline !important");
-});
+Swal.fire({
+    title: '¡Gracias por comunicarte!',
+    text: 'Te voy a estar contactando a a brevedad',
+    icon: 'success',
+    confirmButtonText: '¡Listo!'})
+})
 
 //Declaración de servicios//
 let nombreServicioA = "Redaccion";

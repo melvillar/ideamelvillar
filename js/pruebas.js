@@ -9,6 +9,22 @@ Swal.fire({
     confirmButtonText: '¡Listo!'})
 })
 
+//Aplicando ajax//
+fetch('https://api.emailjs.com/api/v1.0/email/send-form', {
+        method: 'POST',
+        body: JSON.stringify({
+            title: 'Portfolio',
+            body: 'Melanie Villar',
+            userId: 1,
+        }),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+    })
+    .then((response) => response.json())
+    .then((data) => console.log(data))
+
+
 //Declaración de servicios//
 let nombreServicioA = "Redaccion";
 let precioServicioA = 15000;

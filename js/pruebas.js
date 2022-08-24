@@ -4,7 +4,7 @@ enviar.addEventListener("click", function (e) {
 e.preventDefault();
 Swal.fire({
     title: '¡Gracias por comunicarte!',
-    text: 'Te voy a estar contactando a a brevedad',
+    text: 'Te voy a estar contactando a la brevedad',
     icon: 'success',
     confirmButtonText: '¡Listo!'})
 })

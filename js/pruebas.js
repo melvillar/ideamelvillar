@@ -7,23 +7,20 @@ Swal.fire({
     text: 'Te voy a estar contactando a la brevedad',
     icon: 'success',
     confirmButtonText: '¡Listo!'})
+fetch('https://jsonplaceholder.typicode.com/posts', {
+    method: 'POST',
+    body: JSON.stringify({
+    title: 'Portfolio',
+    body: 'Melnie Villar',
+    userId: 1,
+}),
+    headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+},
 })
-
-//Aplicando ajax//
-fetch('https://api.emailjs.com/api/v1.0/email/send-form', {
-        method: 'POST',
-        body: JSON.stringify({
-            title: 'Portfolio',
-            body: 'Melanie Villar',
-            userId: 1,
-        }),
-        headers: {
-            'Content-type': 'application/json; charset=UTF-8',
-        },
-    })
     .then((response) => response.json())
-    .then((data) => console.log(data))
-
+    .then((json) => console.log(json));
+});
 
 //Declaración de servicios//
 let nombreServicioA = "Redaccion";
@@ -90,7 +87,7 @@ function filtrarServicios(nombre) {
         (servicio) => servicio.nombre == nombre
     );
     selectServicios.innerHTML = "";
-    render(lista);
+    render(listaNombres);
 }
 
 selectServicios.addEventListener("change", inputHandler);

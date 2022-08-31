@@ -271,6 +271,15 @@ form {
             font-size: 24px;
         }
     }
+	.optionform {
+		font-size: 1.25rem;
+		padding: 0.7rem;
+		background-color: $violeta-oscuro1;
+		border-radius: 30px;
+		justify-content: center;
+		color: $blanco;
+		border: none;
+	}
 }
 @media screen and (max-width: 768px){
 	.presentation{

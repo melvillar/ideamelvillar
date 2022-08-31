@@ -239,6 +239,22 @@ form {
     form input:focus {
       width: 100%;
       font-size: 24px; }
+    form option {
+      font-size: 1.25rem;
+      padding: 0.7rem;
+      background-color: #0E172C;
+      border-radius: 30px;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      text-align: center;
+      color: #FFFFFF ;
+      margin: 0.7rem;}
+    form select{
+      background-color: transparent ! important;
+      border: none ! important;
+      justify-content: center ! important;
+    }
 @media screen and (max-width: 768px) {
   .presentation {
     flex-direction: column; }

@@ -11,7 +11,7 @@ fetch('https://jsonplaceholder.typicode.com/posts', {
     method: 'POST',
     body: JSON.stringify({
     title: 'Portfolio',
-    body: 'Melnie Villar',
+    body: 'Melanie Villar',
     userId: 1,
 }),
     headers: {
@@ -86,8 +86,6 @@ function filtrarServicios(nombre) {
     let lista = serviciosGenerales.filter(
         (servicio) => servicio.nombre == nombre
     );
-    selectServicios.innerHTML = "";
-    render(listaNombres);
 }
 
 selectServicios.addEventListener("change", inputHandler);
@@ -105,22 +103,29 @@ function cotizar(nombreServicio) {
     switch (nombreServicio) {
         case "Redaccion":
         valor = descuentoAgosto(servicioA.precio, 0.15);
-        serviciosSeleccionados.innerText =
-            "Por descuento, el servicio te queda a solo $" + valor;
+        Swal.fire({
+            title: '¡Tenés un descuento solo por este mes!',
+            text:"Por descuento, el servicio te queda a solo $" + valor,
+            confirmButtonText: '¡Súper!'})
         break;
         case "Marketing":
         valor = descuentoAgosto(servicioB.precio, 0.1);
-        serviciosSeleccionados.innerText =
-            "Por descuento, el servicio te queda a solo $" + valor;
+        Swal.fire({
+            title: '¡Tenés un descuento solo por este mes!',
+            text:"Por descuento, el servicio te queda a solo $" + valor,
+            confirmButtonText: '¡Súper!'})
         break;
         case "Asesoria":
         valor = descuentoAgosto(servicioC.precio, 0.2);
-        serviciosSeleccionados.innerText =
-            "Por descuento, el servicio te queda a solo $" + valor;
+        Swal.fire({
+            title: '¡Tenés un descuento solo por este mes!',
+            text:"Por descuento, el servicio te queda a solo $" + valor,
+            confirmButtonText: '¡Súper!'})
         break;
         default:
-        serviciosSeleccionados.innerText =
-            "Dejame tu consulta específica y te voy a estar respondiendo a la brevedad";
+            Swal.fire({
+                text:"Dejame tu consulta específica y te voy a estar respondiendo a la brevedad",
+                confirmButtonText: '¡Súper!'})
         break;
     }
 }
